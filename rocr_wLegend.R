@@ -17,10 +17,10 @@ class.inactive <- matrix(sample(0, (ncol(inactive)*nrow(inactive)), replace=T), 
 # binding the classes
 target_class <- rbind(class.active,class.inactive)
 #target_class1 <- target_class[,1]
-# calculating the correspondence for prediction
+# calculating the values for ROC curve
 pred <- prediction(target_pred, target_class)
 perf <- performance(pred,"tpr","fpr")
-# changing for the ROC plot - width, etc
+# changing params for the ROC plot - width, etc
 par(mar=c(5,5,2,2),xaxs = "i",yaxs = "i",cex.axis=1.3,cex.lab=1.4)
 # plotting the ROC curve
 plot(perf,col="black",lty=3, lwd=3)
