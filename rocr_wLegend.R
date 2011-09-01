@@ -8,10 +8,9 @@ active <- read.table("sample.active", sep=",", header=FALSE)
 inactive <- read.table("sample.inactive", sep=",", header=FALSE)
 # binding them and converting to matrix because ROCR works with matrix data
 target_pred <- as.matrix(rbind(active,inactive))
-# generating classes (1 for active, 0 for inactive, but it can be -1 and 1 - there is no difference)
 # because number of the colums should be the same - making additional param
 ncol <- ncol(inactive)
-# making classes
+# generating classes (1 for active, 0 for inactive, but it can be -1 and 1 - there is no difference)
 class.active <- matrix(sample(1, (ncol(active)*nrow(active)), replace=T), ncol=ncol)
 class.inactive <- matrix(sample(0, (ncol(inactive)*nrow(inactive)), replace=T), ncol=ncol)
 # binding the classes
