@@ -10,7 +10,7 @@ inactive <- read.table("sample.inactive", sep=",", header=FALSE)
 target_pred <- as.matrix(rbind(active,inactive))
 # because number of the colums should be the same - making additional param
 ncol <- ncol(inactive)
-# generating classes (1 for active, 0 for inactive, but it can be -1 and 1 - there is no difference)
+# generating classes (1 for active, 0 for inactive, but it can be 1 and -1 - there is no difference)
 class.active <- matrix(sample(1, (ncol(active)*nrow(active)), replace=T), ncol=ncol)
 class.inactive <- matrix(sample(0, (ncol(inactive)*nrow(inactive)), replace=T), ncol=ncol)
 # binding the classes
