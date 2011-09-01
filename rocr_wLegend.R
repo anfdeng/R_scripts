@@ -4,7 +4,7 @@
 library("ROCR")
 # loading active compounds, or compounds with label1
 active <- read.table("sample.active", sep=",", header=FALSE)
-# loading active compounds, or compounds with label2
+# loading inactive compounds, or compounds with label2
 inactive <- read.table("sample.inactive", sep=",", header=FALSE)
 # binding them and converting to matrix because ROCR works with matrix data
 target_pred <- as.matrix(rbind(active,inactive))
